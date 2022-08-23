@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="todo.css" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>TODO_app</title>
+  </head>
+  <body>
+    <div class="textalign-center">
+      <h1>TO Do! Application vishal sharma</h1>
+    </div>
+
+    <div class="todoColumn">
+      <div class="border ht-wd">
+        <h2 class="padding">TO-DO</h2>
+        <div id="div-todo">
+          <ol class="pd-ol-left" id="todo"></ol>
+        </div>
+      </div>
+
+      <div class="border ht-wd padding">
+        <h2 class="padding">In Progress</h2>
+        <div id="div-inprogress">
+          <ol class="pd-ol-left" id="inprogress"></ol>
+        </div>
+      </div>
+
+      <div class="border ht-wd padding">
+        <h2 class="padding">Made!</h2>
+        <div id="div-made">
+          <ol class="pd-ol-left" id="made"></ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="getcentered mg-top">
+      <div class="mg-auto">
+        <textarea
+          name=""
+          id="textarea"
+          cols="30"
+          rows="5"
+          placeholder="Update your TO-Do List!"
+          autofocus
+        ></textarea>
+      </div>
+      <div>
+        <button id="btn" class="btn green mg-center" onclick="addContent()">
+          Add
+        </button>
+      </div>
+    </div>
+    <script src="todo.js"></script>
+  </body>
+</html>
