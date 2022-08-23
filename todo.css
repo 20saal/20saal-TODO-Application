@@ -2,7 +2,9 @@
     text-align: center;
 }
 
-
+.bgCl{
+    background-color: lightgrey;
+}
 
 .todoColumn{
     column-count: 3;
@@ -43,20 +45,19 @@
 }
 
 .mg-center{
-    margin-left: 80px;
-    margin-top: 20px;
+    width: 100%;
 }
 
 .btn{
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: inherit;
-    padding: 10px 15px;
+    padding: 5% 10%;
     cursor: pointer;
 }
 
 .green{
-    color: black;
+    color: green;
     font-size: 20px;
     font-weight: bolder;
 }
@@ -67,4 +68,24 @@
 
 #textarea{
     max-width: 100%;
+}
+
+.container{
+    margin-top: 0%;
+    position: relative;
+}
+
+.center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.mg-auto{
+    margin: auto;
+    border: 20px solid orange;
+    border-radius: 10px;
 }

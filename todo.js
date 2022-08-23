@@ -2,11 +2,15 @@ let todoItemsArray = [];
 let progressItemsArray =[];
 let madeItemArray = [];
 
+let addContent = function (){
+    let text = document.getElementById('textarea').value;
+    listContent(text);
+}
 
 
-function addContent(){
+function listContent(text){
     //add item to todo list from textarea
-    const text = document.getElementById('textarea').value;
+    // const text = document.getElementById('textarea').value;
     const divnode = document.createElement('div');
     const textnode = document.createTextNode(text);
     const listnode  = document.createElement('li');
@@ -61,11 +65,12 @@ function addContent(){
 
         //move back to todo list
         buttonNodeTodo.addEventListener('click', function(event){
-            todo.addItemTodo(textCopy);
+            // todo.addItemTodo(textCopy);
             todo.Delete(divNodeProgress,listNodeProgress, progressItemsArray, index);
             todoItemsArray.push(textCopy);
             console.log(todoItemsArray);
             console.log(progressItemsArray);
+            listContent(textCopy);
         });
 
         buttonNodeToMade.addEventListener('click',function(event){
@@ -103,37 +108,12 @@ function addContent(){
 }
 
 let todo ={
-    'addItemTodo': function (text){
-        const divnode = document.createElement('div');
-        const textnode = document.createTextNode(text);
-        const listnode  = document.createElement('li');
-        const buttonNode = document.createElement('button');
-        const buttonNodeToProgress = document.createElement('button');
-        buttonNode.innerText = 'Del';
-        buttonNodeToProgress.innerText = '=>';
-        //div-li-text+button
-        listnode.appendChild(textnode);
-        listnode.appendChild(buttonNode);
-        listnode.appendChild(buttonNodeToProgress);
-        divnode.appendChild(listnode);
-        document.querySelector('#todo').appendChild(divnode);
-        // document.getElementById('textarea').value = '';
-        //delete item in todo list
-    buttonNode.addEventListener('click',function(event){
-        let index = todoItemsArray.indexOf(text);
-        console.log(index);
-        todo.Delete(divnode,listnode, todoItemsArray, index);
 
-        
-
-    });
-    },
-
-    'Delete':function (parentnode, childnode,arrayname, index){
+    'Delete': function (parentnode, childnode,arrayname, index){
         parentnode.removeChild(childnode);
         arrayname.splice(index,1);
 
-    }
+    },
 
 };
 
