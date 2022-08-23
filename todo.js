@@ -35,6 +35,8 @@ function listContent(text){
         let index = todoItemsArray.indexOf(text);
         console.log(index);
         todo.Delete(divnode,listnode, todoItemsArray, index);
+        document.getElementById('todocolumn').style.background = 'red';
+        setTimeout(()=>document.getElementById('todocolumn').style.background='',200);
     });
 
     //transfer from todo to inprogress and delete from todo
@@ -55,6 +57,9 @@ function listContent(text){
         divNodeProgress.appendChild(listNodeProgress);
         document.querySelector('#inprogress').appendChild(divNodeProgress);
 
+        document.getElementById('todocolumn').style.background = 'yellow';
+        setTimeout(()=>document.getElementById('todocolumn').style.background='',200);
+
         //delete item from todo after transfered to in-progress
         todo.Delete(divnode,listnode, todoItemsArray, index);
         console.log(todoItemsArray);
@@ -71,8 +76,11 @@ function listContent(text){
             console.log(todoItemsArray);
             console.log(progressItemsArray);
             listContent(textCopy);
+            document.getElementById('todocolumn').style.background = 'yellow';
+            setTimeout(()=>document.getElementById('todocolumn').style.background='',200);
         });
 
+        //transfer item to madelist from progress list
         buttonNodeToMade.addEventListener('click',function(event){
             let index = progressItemsArray.indexOf(text);
             let textcopy2 = progressItemsArray[index];
@@ -94,9 +102,14 @@ function listContent(text){
             madeItemArray.push(textcopy2);
             console.log(madeItemArray);
 
+            document.getElementById('todocolumn').style.background = 'yellow';
+            setTimeout(()=>document.getElementById('todocolumn').style.background='',200);
+
             //delete made list item
             buttonNodeMade.addEventListener('click', function(event){
                 todo.Delete(divNodeMade,listNodeMade,madeItemArray,index);
+                document.getElementById('todocolumn').style.background = 'red';
+                setTimeout(()=>document.getElementById('todocolumn').style.background='',200);
             })
             
         });
